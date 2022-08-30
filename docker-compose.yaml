@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  front:
+    build:
+      context: front
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true 
+
+  back:
+    build:
+      context: back
+    volumes:
+      - ./back/src:/app
+    ports:
+      - 3030:3030
+    tty: true
+    stdin_open: true
